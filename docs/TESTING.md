@@ -1,4 +1,4 @@
-# Testing OpenTV
+# Testing GassTV
 
 There is no QA department; there is you, your provider and your telly. This page makes that
 count. The app logs everything it does, so a bug report with a log attached is usually a fix

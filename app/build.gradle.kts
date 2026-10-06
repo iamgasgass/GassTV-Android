@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "app.opentv"
+    namespace = "app.gasstv"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "app.opentv"
+        applicationId = "app.gasstv"
         minSdk = 23
         targetSdk = 35
         versionCode = 20

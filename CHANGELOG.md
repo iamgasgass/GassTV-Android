@@ -15,7 +15,7 @@
 
 ## 0.11.7
 
-- **Stalker portals: closer to a real box.** Building on v0.11.6, OpenTV now sends the rest of the
+- **Stalker portals: closer to a real box.** Building on v0.11.6, GassTV now sends the rest of the
   identity a real MAG set-top box presents at login — the auth token in the session cookie (not just
   the header), a hardware-version hash, a timestamp and the box's API signature — and it probes a
   couple more portal paths. Some Ministra/Stalker panels only return the channel list when they see
@@ -24,11 +24,11 @@
 
 ## 0.11.6
 
-- **Stalker portals: full set-top-box identity.** OpenTV now authenticates to Stalker/Ministra
+- **Stalker portals: full set-top-box identity.** GassTV now authenticates to Stalker/Ministra
   portals the way a real MAG box does — sending the device serial, `device_id`, a signature and a
   metrics blob derived from your MAC, instead of the MAC on its own. Many portals won't hand over
   the channel list or stream links to a box that only presents a MAC, which is why some lines that
-  worked in other apps came up empty in OpenTV. This lets those portals authorise OpenTV. If a
+  worked in other apps came up empty in GassTV. This lets those portals authorise GassTV. If a
   portal still fails, please open an issue and say which one — it helps a lot.
 
 ## 0.11.5
@@ -50,18 +50,18 @@ recording while it's still taping, and the whole interface now speaks 30 languag
 ### Recording & DVR
 
 - **Watch a recording while it's still recording.** Start playing something the moment it begins
-  taping — OpenTV reads the growing file straight off disk, so it costs **zero extra connections**
+  taping — GassTV reads the growing file straight off disk, so it costs **zero extra connections**
   to your provider. On a single-stream account that's the difference between "wait until it's
   finished" and "watch now". Fast-forward and rewind work within whatever's been taped so far.
 - **Record straight to a NAS.** Point recordings at a network share over SMB (Settings →
   Recordings → NAS, or set it up from the phone/laptop web manager) so a cheap box isn't boxed in
-  by its own storage — and every OpenTV in the house can reach the same recordings.
+  by its own storage — and every GassTV in the house can reach the same recordings.
 - **Single-connection auto-switch.** On a one-stream provider, if a recording is due to start on
-  another channel, OpenTV moves the screen onto that recording as it begins — with a **30-second
+  another channel, GassTV moves the screen onto that recording as it begins — with a **30-second
   warning** first and a *Keep watching* button if you'd rather not. No more "why did my live stream
   just cut out?" (Recordings → Recording behaviour → *Auto-switch when recording starts*.)
 - **Clash handling with multi-provider fallback.** Book two overlapping recordings and, if more
-  than one of your providers carries that channel, OpenTV records each from a **different provider**
+  than one of your providers carries that channel, GassTV records each from a **different provider**
   so neither is cut. On a single provider it flags the clash instead.
 - **Recording padding.** Start each recording a minute early and run a few minutes past the listed
   end, so a late kick-off or an overrun isn't clipped. Adjustable per side.
@@ -94,14 +94,14 @@ recording while it's still taping, and the whole interface now speaks 30 languag
 ### Notes
 
 - Everything stays on your device — provider logins never leave the box.
-- Free and open source (GPL-3.0): https://github.com/opentvproject/opentv
+- Free and open source (GPL-3.0): https://github.com/gasstvproject/gasstv
 
 
 ## 0.10.0
 
 - **Movies & Shows, redesigned.** A Plex-style layout with big artwork, cast & director, "more with
   this cast" rows, and cleaned-up titles (no more "NF -" / "(KR)" junk). Optional: add your own free
-  TMDB key in Settings → Metadata and OpenTV fills in any posters, backdrops, cast or synopses your
+  TMDB key in Settings → Metadata and GassTV fills in any posters, backdrops, cast or synopses your
   provider left blank — the key stays on your device.
 - **No more stuck "Loading movies & shows".** The movies/series catalogue is cached, so it loads
   instantly on later launches instead of re-downloading every time — and the live preview no longer
@@ -119,9 +119,9 @@ recording while it's still taping, and the whole interface now speaks 30 languag
   page to browse, **rename**, hide, favourite and **reorder** channels with a real keyboard and
   mouse. Changes apply to the TV instantly. Local-only: the TV is the server, nothing touches a
   cloud.
-- **Recording keeps going when you leave the app or the box sleeps.** OpenTV can now ask Android to
+- **Recording keeps going when you leave the app or the box sleeps.** GassTV can now ask Android to
   exempt it from battery optimisation (Settings → Recording → "Recording in the background"), which
-  is what keeps recordings running in standby and when you switch away — swiping OpenTV out of
+  is what keeps recordings running in standby and when you switch away — swiping GassTV out of
   recents no longer stops a recording either.
 - **Rename channels.** Give a channel your own name; it sticks and survives a guide refresh (from
   the web manager for now).
@@ -156,7 +156,7 @@ recording while it's still taping, and the whole interface now speaks 30 languag
   become the default "Me" profile's — nothing is lost.
 - **Continue Watching.** Movies and Shows now open with a "Continue watching" shelf for the active
   profile — pick up your last film or episode where you left off, with a progress bar on each.
-- **Local sync (no servers).** Settings → Sync copies your continue-watching between two OpenTV
+- **Local sync (no servers).** Settings → Sync copies your continue-watching between two GassTV
   devices over your own wifi: one device shares behind a six-digit code, the other receives. It's
   local-only — nothing leaves the house — the household answer to the cloud sync that died with
   Viewella.

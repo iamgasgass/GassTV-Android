@@ -32,7 +32,7 @@ publicly.**
 
    ```bash
    keytool -genkeypair -v -keystore upload.jks -keyalg RSA -keysize 4096 \
-     -validity 10000 -alias opentv
+     -validity 10000 -alias gasstv
    ```
 
 2. Add these repository secrets under **Settings → Secrets and variables → Actions**:
